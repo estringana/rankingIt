@@ -8,4 +8,3 @@ class Teacher extends Model
 {
     //
 }
-

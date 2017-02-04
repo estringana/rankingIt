@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teacher/{id}', 'TeacherController@show');
+Route::post('/teachers', 'TeacherController@create');
+Route::get('/teachers/{id}', 'TeacherController@view');

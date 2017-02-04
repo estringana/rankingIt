@@ -17,15 +17,14 @@ class UsersCanViewTeachersByIdTest extends TestCase
     {
         $teacher = factory(Teacher::class)->create([]);
 
-        $this->get('/teacher/'.$teacher->id)
+        $this->get('/teachers/'.$teacher->id)
             ->assertJson($teacher->toArray());
     }
 
     /** @test */
     public function it_returns_404_when_teacher_not_found()
     {
-        $this->get('/teacher/1234')
+        $this->get('/teachers/1234')
             ->assertStatus(404);
     }
 }
-
