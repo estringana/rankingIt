@@ -110,8 +110,7 @@ checks:
 
 
 filter:
-    excluded_paths:
-        - 'rankingIt/vendor/*'
+    paths: ["rankingIt/app/*", "rankingIt/tests/*"]
 
 tools:
 
@@ -145,8 +144,6 @@ tools:
     # Analyzes the size and structure of a PHP project.
     php_loc:
         enabled:              true
-        excluded_dirs:
-            - 'rankingIt/vendor'
 
 
     # PHP Mess Detector
@@ -159,16 +156,11 @@ tools:
                 - naming
                 - design
                 - controversial
-        filter:
-            excluded_paths:
-                - 'rankingIt/vendor/*'
 
 
     # PHP PDepend (https://scrutinizer-ci.com/docs/tools/php/pdepend/)
     php_pdepend:
         enabled:              true
-        excluded_dirs:
-            - 'rankingIt/vendor'
 
 
     # PHP Analyzer (https://scrutinizer-ci.com/docs/tools/php/php-analyzer/)
