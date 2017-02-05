@@ -24,4 +24,9 @@ class InstitutionController extends Controller
     {
         return Institution::all();
     }
+
+    public function view($id)
+    {
+        return Institution::findOrFail($id)->toJson();
+    }
 }
