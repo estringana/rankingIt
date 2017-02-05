@@ -8,13 +8,13 @@ use App\Vote;
 
 class VoteController extends Controller
 {
-    public function create($id, Request $request)
+    public function create($teacherId, Request $request)
     {
         $this->validate($request,
             ['vote' => 'required']
         );
 
-        $teacher = Teacher::findOrFail($id);
+        $teacher = Teacher::findOrFail($teacherId);
 
         $vote = new Vote();
         $vote->vote = $request->get('vote');
@@ -23,5 +23,10 @@ class VoteController extends Controller
         $vote->save();
 
         return response('', 201);
+    }
+
+    public function view($teacherId)
+    {
+        return Teacher::findOrFail($teacherId)->votes;
     }
 }
