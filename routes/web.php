@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::post('/teachers', 'TeacherController@create');
 Route::get('/teachers/{id}', 'TeacherController@view');
+Route::post('/teachers/{id}/votes', 'VoteController@create');
