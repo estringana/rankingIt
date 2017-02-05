@@ -24,4 +24,9 @@ class TeacherController extends Controller
 
         return response('', 201);
     }
+
+    public function all()
+    {
+        return Teacher::all();
+    }
 }

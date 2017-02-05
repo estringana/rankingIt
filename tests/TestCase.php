@@ -4,6 +4,7 @@ namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use App\Exceptions\Handler;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Exception;
 
 abstract class TestCase extends BaseTestCase
