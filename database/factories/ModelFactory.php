@@ -30,7 +30,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(Teacher::class, function (FakerGenerator $faker) {
     return [
-        'name' => $faker->name
+        'name' => $faker->name,
+        'institution_id' => factory(Institution::class)->create()->id
     ];
 });
 

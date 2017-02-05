@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\Teacher;
+use App\Institution;
 use App\Vote;
 
 class TeacherTest extends TestCase
@@ -16,7 +17,7 @@ class TeacherTest extends TestCase
     /** @test */
     public function teachers_can_be_voted()
     {
-        $teacher = factory(Teacher::class)->create([]);
+        $teacher = factory(Teacher::class)->create();
 
         $vote = new Vote();
         $vote->vote = 'something';
