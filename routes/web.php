@@ -24,3 +24,4 @@ Route::post('/teachers/{id}/votes', 'VoteController@create');
 
 // Institutions
 Route::post('/institutions', 'InstitutionController@create');
+Route::get('/institutions', 'InstitutionController@all');

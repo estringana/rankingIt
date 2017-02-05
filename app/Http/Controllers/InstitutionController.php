@@ -19,4 +19,9 @@ class InstitutionController extends Controller
 
         return response('', 201);
     }
+
+    public function all()
+    {
+        return Institution::all();
+    }
 }
