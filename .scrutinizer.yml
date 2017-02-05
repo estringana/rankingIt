@@ -57,7 +57,7 @@ checks:
         encourage_single_quotes: true
         foreach_traversable: true
         foreach_usable_as_reference: true
-        function_in_camel_caps: true
+        function_in_camel_caps: false
         instanceof_class_exists: true
         line_length:
             max_length: '120'
