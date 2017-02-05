@@ -12,6 +12,7 @@
  */
 
 use App\Teacher;
+use App\Vote;
 use Faker\Generator as FakerGenerator;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
@@ -29,5 +30,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(Teacher::class, function (FakerGenerator $faker) {
     return [
         'name' => $faker->name
+    ];
+});
+
+$factory->define(Vote::class, function () {
+    return [
+        'vote' => rand(0, 5),
     ];
 });
