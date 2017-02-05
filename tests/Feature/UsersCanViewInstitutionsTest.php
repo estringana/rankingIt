@@ -6,21 +6,21 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\Teacher;
+use App\Institution;
 
-class UsersCanViewAListOfTeachersTest extends TestCase
+class UsersCanViewInstitutionsTest extends TestCase
 {
     use DatabaseMigrations;
 
     /** @test */
-    public function uses_can_view_a_list_containing_all_teachers()
+    public function uses_can_view_a_list_containing_all_institutions()
     {
         $this->disableExceptionHandling();
 
-        $teachers = factory(Teacher::class, 2)->create([]);
+        $institutions = factory(Institution::class, 2)->create([]);
 
-        $this->get('/teachers')
+        $this->get('/institutions')
             ->assertStatus(200)
-            ->assertJson($teachers->toArray());
+            ->assertJson($institutions->toArray());
     }
 }
