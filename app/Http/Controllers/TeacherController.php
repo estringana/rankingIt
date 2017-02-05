@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
+use App\Institution;
 
 class TeacherController extends Controller
 {
@@ -15,12 +16,17 @@ class TeacherController extends Controller
     public function create(Request $request)
     {
         $this->validate($request,
-            ['name' => 'required']
+            [
+                'name' => 'required',
+                'institution_id' => 'required',
+            ]
         );
+
+        $institution = Institution::findOrFail($request->get('institution_id'));
 
         $teacher = new Teacher();
         $teacher->name = $request->get('name');
-        $teacher->save();
+        $institution->addTeacher($teacher);
 
         return response('', 201);
     }

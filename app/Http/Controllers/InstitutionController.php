@@ -25,8 +25,13 @@ class InstitutionController extends Controller
         return Institution::all();
     }
 
-    public function view($id)
+    public function view($institutionId)
     {
-        return Institution::findOrFail($id)->toJson();
+        return Institution::findOrFail($institutionId)->toJson();
+    }
+
+    public function teachers($institutionId)
+    {
+        return Institution::findOrFail($institutionId)->teachers;
     }
 }

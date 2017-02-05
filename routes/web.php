@@ -26,3 +26,4 @@ Route::post('/teachers/{id}/votes', 'VoteController@create');
 Route::post('/institutions', 'InstitutionController@create');
 Route::get('/institutions', 'InstitutionController@all');
 Route::get('/institutions/{id}', 'InstitutionController@view');
+Route::get('/institutions/{id}/teachers', 'InstitutionController@teachers');

@@ -16,7 +16,7 @@ class UsersCanVoteTeachersTest extends TestCase
     public function teachers_can_be_voted()
     {
         $vote = '0';
-        $teacher = factory(Teacher::class)->create([]);
+        $teacher = factory(Teacher::class)->create();
 
         $this->post('/teachers/'.$teacher->id.'/votes',
             ['vote' => $vote]
