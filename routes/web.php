@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Teachers
 Route::post('/teachers', 'TeacherController@create');
 Route::get('/teachers/{id}', 'TeacherController@view');
 Route::get('/teachers', 'TeacherController@all');
 Route::get('/teachers/{id}/votes', 'VoteController@view');
 Route::post('/teachers/{id}/votes', 'VoteController@create');
+
+// Institutions
+Route::post('/institutions', 'InstitutionController@create');

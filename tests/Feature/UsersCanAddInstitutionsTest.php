@@ -6,27 +6,27 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\Teacher;
+use App\Institution;
 
-class UsersCanAddTeachersTest extends TestCase
+class UsersCanAddInstitutionsTest extends TestCase
 {
     use DatabaseMigrations;
 
     /** @test */
-    public function teachers_can_be_added()
+    public function institutions_can_be_added()
     {
         $this->disableExceptionHandling();
 
-        $name = 'Some teacher name';
+        $name = 'Some institution name';
 
-        $this->assertCount(0, Teacher::all());
+        $this->assertCount(0, Institution::all());
 
-        $this->post('/teachers',
+        $this->post('/institutions',
             [
                 'name' => $name
             ]
         )->assertStatus(201);
 
-        $this->assertCount(1, Teacher::all());
+        $this->assertCount(1, Institution::all());
     }
 }
